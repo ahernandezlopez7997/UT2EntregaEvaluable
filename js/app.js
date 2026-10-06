@@ -1,6 +1,7 @@
 // Alumno: Alberto Hernández López 2º DAW
 
 // Ejercicio 1
+// Comprobar antes de entregar
 function ejercicio1() {
   let frase;
   let fraseValida = false;
@@ -14,9 +15,9 @@ function ejercicio1() {
       break;
     }
 
-    const palabras = frase.trim().split(/\s+/).filter(p => p !== "");
+    const caracteres = frase.trim().split(/\s+/).filter(p => p !== "");
 
-    if (palabras.length >= 5) {
+    if (caracteres.length >= 5) {
       fraseValida = true;
     } else {
       alert("La frase debe tener al menos 5 palabras. Inténtalo de nuevo.");
@@ -28,8 +29,6 @@ function ejercicio1() {
 
     const sinEspacios = frase.replace(/\s/g, "");
     const totalCaracteres = sinEspacios.length;
-
-
     const conAsteriscos = frase.replace(/[aeiouáéíóúü]/gi, "*");
 
 
@@ -57,16 +56,25 @@ function ejercicio1() {
 }
 
 // Ejercicio 2
+
 function ejercicio2() {
+  let palabras;
+
+  prompt("Introduce 7 palabras variadas con Mayusculas y algunas con 4 letras o menos");
+  const contador = prompt().split(" ");
+
+  alert();
 
 }
 
 // Ejercicio 3
+
 function ejercicio3() {
 
 }
 
 // Ejercicio 4
+
 function ejercicio4() {
 
 }
