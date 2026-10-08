@@ -90,6 +90,7 @@ function ejercicio2() {
   }
 }
 
+// Ejercicio 3
 function ejercicio3() {
   // Creamos un objeto que almacene los estudiantes y sus notas.
   let estudiantes = {
@@ -149,7 +150,7 @@ function ejercicio3() {
     sumaNotas += estudiantes[estudiante];
   }
   let notaMedia = sumaNotas / Object.keys(estudiantes).length;
-  console.log(`La nota media de la clase es ${notaMedia}`);
+  console.info(`La nota media de la clase es ${notaMedia}`);
 
   // Mostramos el listado de estudiantes ordenado alfabéticamente.
   let estudiantesOrdenados = Object.keys(estudiantes).sort();
