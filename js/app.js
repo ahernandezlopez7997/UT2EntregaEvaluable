@@ -1,5 +1,5 @@
 // Alumno: Alberto Hernández López
-// 2º DAW
+// 2º CFGS: Desarrollo de Aplicaciones Web
 // Desarrollo de aplicaciones Web Entorno Cliente (DWEC)
 
 
