@@ -1,58 +1,43 @@
-// Alumno: Alberto Hernández López 2º DAW
+// Alumno: Alberto Hernández López
+// 2º DAW
+// Desarrollo de aplicaciones Web Entorno Cliente (DWEC)
 
 // Ejercicio 1
-// Comprobar antes de entregar
+
 function ejercicio1() {
-  let frase;
-  let fraseValida = false;
-
-  // Bucle para pedir la frase.
-  while (!fraseValida) {
+  let frase = prompt("Introduce una frase de al menos 5 palabras:");
+  while (frase.split(" ").length < 5) {
+    alert("La frase debe tener al menos 5 palabras. Inténtalo de nuevo.");
     frase = prompt("Introduce una frase de al menos 5 palabras:");
-
-    if (frase === null) {
-      alert("Has cancelado la entrada.");
-      break;
-    }
-
-    const caracteres = frase.trim().split(/\s+/).filter(p => p !== "");
-
-    if (caracteres.length >= 5) {
-      fraseValida = true;
-    } else {
-      alert("La frase debe tener al menos 5 palabras. Inténtalo de nuevo.");
-    }
   }
 
-  // Apartados
-  if (fraseValida) {
+  // Contar caracteres no espacios
+  let caracterSinEspacios = frase.replace(/\s+/g, "").length;
+  console.log(`Número de caracteres sin espacios: ${caracterSinEspacios}`);
 
-    const sinEspacios = frase.replace(/\s/g, "");
-    const totalCaracteres = sinEspacios.length;
-    const conAsteriscos = frase.replace(/[aeiouáéíóúü]/gi, "*");
+  // Sustituir vocales por asteriscos
+  let fraseConAsteriscos = frase.replace(/[aeiouáéíóúAEIOUÁÉÍÓÚ]/gi, "*");
+  console.log(`Frase con vocales sustituidas por asteriscos: ${fraseConAsteriscos}`);
 
+  // Sustituir elementos pares por guion bajo
+  let fraseConGuionesBajos = "";
+  let contadorLetras = 0;
 
-    let contador = 0;
-    let conGuiones = "";
-    for (const c of frase) {
-      if (/\s/.test(c)) {
-        conGuiones += c;          // los espacios se mantienen y no cuentan
+  for (let i = 0; i < frase.length; i++) {
+    // Por pares entiendo sin considerar el 0.
+    if (frase[i] === " ") {
+      fraseConGuionesBajos += frase[i];
+    } else {
+      contadorLetras++;
+
+      if (contadorLetras % 2 === 0) {
+        fraseConGuionesBajos += "_";
       } else {
-        contador++;
-        conGuiones += (contador % 2 === 0) ? "_" : c;
+        fraseConGuionesBajos += frase[i];
       }
     }
-
-    // Estilos para la consola
-    const estiloTitulo = "color: white; background: #2c3e50; font-size: 16px; font-weight: bold; padding: 4px 10px; border-radius: 4px;";
-    const estiloDato = "color: #1a73e8; font-size: 14px; font-style: italic;";
-
-    console.log("%cResultados del análisis", estiloTitulo);
-    console.log("%cFrase original: " + frase, estiloDato);
-    console.log("%cCaracteres (sin espacios): " + totalCaracteres, estiloDato);
-    console.log("%cVocales por asteriscos: " + conAsteriscos, estiloDato);
-    console.log("%cPosiciones pares por guion bajo: " + conGuiones, estiloDato);
   }
+  console.log(`Frase con elementos pares sustituidos por guion bajo: ${fraseConGuionesBajos.trim()}`);
 }
 
 // Ejercicio 2
